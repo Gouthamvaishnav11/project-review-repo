@@ -1,0 +1,11 @@
+{
+ "doctype": "Page",
+ "name": "drr-report",
+ "page_name": "drr-report",
+ "title": "DRR Report",
+ "module": "ecohotels",
+ "standard": "Yes",
+ "system_page": 0,
+ "icon": "fa fa-bar-chart",
+ "roles": []
+}

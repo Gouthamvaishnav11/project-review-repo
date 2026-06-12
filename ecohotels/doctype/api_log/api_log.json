@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "creation": "2026-01-28 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "api_name",
+  "endpoint",
+  "folio_no",
+  "booking_id",
+  "request_payload",
+  "response_data",
+  "status_code",
+  "execution_time",
+  "success",
+  "error_message",
+  "timestamp"
+ ],
+ "fields": [
+  {
+   "fieldname": "api_name",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "API Name",
+   "options": "Checkin\nCheckout\nPayment\nReservation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "endpoint",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Endpoint",
+   "reqd": 1
+  },
+  {
+   "fieldname": "folio_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Folio No"
+  },
+  {
+   "fieldname": "booking_id",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Booking ID"
+  },
+  {
+   "fieldname": "request_payload",
+   "fieldtype": "Long Text",
+   "label": "Request Payload"
+  },
+  {
+   "fieldname": "response_data",
+   "fieldtype": "Long Text",
+   "label": "Response Data"
+  },
+  {
+   "fieldname": "status_code",
+   "fieldtype": "Int",
+   "label": "Status Code"
+  },
+  {
+   "fieldname": "execution_time",
+   "fieldtype": "Float",
+   "label": "Execution Time (seconds)",
+   "precision": "4"
+  },
+  {
+   "default": "0",
+   "fieldname": "success",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Success"
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Long Text",
+   "label": "Error Message"
+  },
+  {
+   "fieldname": "timestamp",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Timestamp"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-01-28 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ecohotels",
+ "name": "API Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "select": 1
+  }
+ ],
+ "sort_field": "timestamp",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "autoname": "format:{pms_product_id}-{tax_rate}",
+ "creation": "2025-06-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "pms_product_id",
+  "tax_rate",
+  "erp_item",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "pms_product_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PMS Product ID",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Tax Rate (%)",
+   "description": "Set to 0 for generic mapping. Set a value (e.g. 5, 18) for tax-specific mapping."
+  },
+  {
+   "fieldname": "erp_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "ERP Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description / Notes"
+  }
+ ],
+ "links": [],
+ "modified": "2025-06-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ecohotels",
+ "name": "Ecohotels Product Mapping",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

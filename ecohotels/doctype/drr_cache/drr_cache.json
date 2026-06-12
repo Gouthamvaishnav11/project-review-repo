@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "creation": "2025-11-27 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date",
+  "company",
+  "metric_type",
+  "metric_name",
+  "prev_date_value",
+  "prev_date_percent",
+  "prev_units",
+  "prev_price",
+  "mtd_value",
+  "mtd_percent",
+  "ytd_value",
+  "ytd_percent",
+  "last_updated"
+ ],
+ "fields": [
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "metric_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Metric Type",
+   "options": "room\ncost",
+   "reqd": 1
+  },
+  {
+   "fieldname": "metric_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Metric Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "prev_date_value",
+   "fieldtype": "Float",
+   "label": "Prev Date Value",
+   "precision": "2"
+  },
+  {
+   "fieldname": "prev_date_percent",
+   "fieldtype": "Float",
+   "label": "Prev Date Percent",
+   "precision": "2"
+  },
+  {
+   "fieldname": "prev_units",
+   "fieldtype": "Float",
+   "label": "Prev Units",
+   "precision": "2"
+  },
+  {
+   "fieldname": "prev_price",
+   "fieldtype": "Float",
+   "label": "Prev Price",
+   "precision": "2"
+  },
+  {
+   "fieldname": "mtd_value",
+   "fieldtype": "Float",
+   "label": "MTD Value",
+   "precision": "2"
+  },
+  {
+   "fieldname": "mtd_percent",
+   "fieldtype": "Float",
+   "label": "MTD Percent",
+   "precision": "2"
+  },
+  {
+   "fieldname": "ytd_value",
+   "fieldtype": "Float",
+   "label": "YTD Value",
+   "precision": "2"
+  },
+  {
+   "fieldname": "ytd_percent",
+   "fieldtype": "Float",
+   "label": "YTD Percent",
+   "precision": "2"
+  },
+  {
+   "fieldname": "last_updated",
+   "fieldtype": "Datetime",
+   "label": "Last Updated"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2025-11-27 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ecohotels",
+ "name": "DRR Cache",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "System Manager"
+  }
+ ],
+ "sort_field": "posting_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

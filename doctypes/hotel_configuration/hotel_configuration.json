@@ -1,0 +1,203 @@
+{
+ "actions": [],
+ "autoname": "field:hotel_code",
+ "creation": "2025-06-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hotel_code",
+  "company",
+  "state",
+  "section_accounts",
+  "sgst_account",
+  "cgst_account",
+  "column_break_accounts",
+  "igst_account",
+  "tds_account",
+  "tcs_account",
+  "tpa_credit_account",
+  "section_taxes",
+  "default_sales_tax_rate",
+  "commission_rate",
+  "column_break_taxes",
+  "commission_item",
+  "section_defaults",
+  "default_customer_group",
+  "default_territory",
+  "column_break_defaults",
+  "default_currency",
+  "default_payment_term"
+ ],
+ "fields": [
+  {
+   "fieldname": "hotel_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Hotel Code",
+   "mandatory_depends_on": "",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "State (Place of Supply)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_accounts",
+   "fieldtype": "Section Break",
+   "label": "Account Configuration"
+  },
+  {
+   "fieldname": "sgst_account",
+   "fieldtype": "Data",
+   "label": "SGST Account Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cgst_account",
+   "fieldtype": "Data",
+   "label": "CGST Account Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_accounts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "igst_account",
+   "fieldtype": "Data",
+   "label": "IGST Account Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tds_account",
+   "fieldtype": "Data",
+   "label": "TDS Account Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tcs_account",
+   "fieldtype": "Data",
+   "label": "TCS Account Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tpa_credit_account",
+   "fieldtype": "Data",
+   "label": "TPA Credit Account Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_taxes",
+   "fieldtype": "Section Break",
+   "label": "Taxes & Commission"
+  },
+  {
+   "default": "7.0",
+   "fieldname": "default_sales_tax_rate",
+   "fieldtype": "Percent",
+   "label": "Default Sales Tax Rate (%)",
+   "reqd": 1
+  },
+  {
+   "default": "18.0",
+   "fieldname": "commission_rate",
+   "fieldtype": "Percent",
+   "label": "TPA Commission Rate (%)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_taxes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "commission_item",
+   "fieldtype": "Link",
+   "label": "Commission Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_defaults",
+   "fieldtype": "Section Break",
+   "label": "Sales Order & Customer Defaults"
+  },
+  {
+   "default": "Individual",
+   "fieldname": "default_customer_group",
+   "fieldtype": "Link",
+   "label": "Default Customer Group",
+   "options": "Customer Group",
+   "reqd": 1
+  },
+  {
+   "default": "India",
+   "fieldname": "default_territory",
+   "fieldtype": "Link",
+   "label": "Default Territory",
+   "options": "Territory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_defaults",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "INR",
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "default": "Default Payment term",
+   "fieldname": "default_payment_term",
+   "fieldtype": "Link",
+   "label": "Default Payment Terms Template",
+   "options": "Payment Terms Template",
+   "reqd": 1
+  }
+ ],
+ "links": [],
+ "modified": "2025-06-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ecohotels",
+ "name": "Hotel Configuration",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Accounts Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
