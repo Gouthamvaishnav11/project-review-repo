@@ -70,15 +70,15 @@ class ReservationAPI:
 # Core Logic Functions — All Dynamic
 # ==============================================================================
 
-def get_account_details(account_no, company):
+def get_account_details(account_name, company):
 	"""Retrieve account name and tax rate from ERPNext."""
 	acc = frappe.db.get_value(
 		"Account",
-		{"account_number": account_no, "company": company},
+		{"name": account_name, "company": company},
 		["name", "tax_rate"]
 	)
 	if not acc:
-		raise ValueError(f"Account {account_no} not found for company {company}")
+		raise ValueError(f"Account {account_name} not found for company {company}")
 	return acc
 
 
@@ -92,13 +92,20 @@ def parse_items(items_data):
 	return items_data or []
 
 def get_sales_taxes(company_name, config):
-    tax_rate = config.default_sales_tax_rate or 7.0
-    sgst_acc = get_account_details(config.sgst_account, company_name)
-    cgst_acc = get_account_details(config.cgst_account, company_name)
-    return [
-        {"charge_type": "On Net Total", "account_head": sgst_acc[0], "rate": tax_rate, "gst_tax_type": "sgst", "description": "SGST"},
-        {"charge_type": "On Net Total", "account_head": cgst_acc[0], "rate": tax_rate, "gst_tax_type": "cgst", "description": "CGST"},
-    ]
+    tax_rate = config.default_sales_tax_rate or 9.0
+
+    igst_acc = get_account_details(
+        config.igst_account,
+        company_name
+    )
+
+    return [{
+        "charge_type": "On Net Total",
+        "account_head": igst_acc[0],
+        "rate": tax_rate * 2,
+        "gst_tax_type": "igst",
+        "description": "IGST"
+    }]
 
 def process_purchase_invoice(api_ctx):
 	"""
@@ -397,10 +404,11 @@ def create_sales_order():
 		items_data = parse_items(api.data.get("items"))
 
 		# 4. Get sales taxes (dynamic from Hotel Configuration)
-		sales_taxes = get_sales_taxes(api.company_name, api.config)
+		customer_id, gst_category = get_or_create_customer(api)
+
 
 		# 5. Get or create customer (dynamic defaults)
-		customer_id, gst_category = get_or_create_customer(api)
+		sales_taxes = get_sales_taxes(api.company_name,api.config,customer_id)
 
 		# 6. Process Purchase Invoice (dynamic commission)
 		process_purchase_invoice(api)
