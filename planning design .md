@@ -366,55 +366,8 @@ Live updates from:
 -
 
 
-![alt text](image.png)
 
-Start
-  │
-  ▼
-Select Production Plan
-  │
-  ▼
-Load Work Orders
-  │
-  ▼
-Generate Job Cards
-  │
-  ▼
-Assign Workstations
-  │
-  ▼
-Display Scheduler
-(Day / Week / Month)
-  │
-  ▼
-Drag & Drop Job Cards
-  │
-  ▼
-Check Resource Availability
-  │
-  ├── Conflict Found?
-  │       │
-  │       ├── Yes ──► Show Conflict
-  │       │             │
-  │       │             ▼
-  │       │      Reschedule Job
-  │       │
-  │       └── No
-  │
-  ▼
-Save Schedule
-  │
-  ▼
-Add Break / Maintenance Events
-  │
-  ▼
-Track Actual Start & End Times
-  │
-  ▼
-Calculate Utilization & KPIs
-  │
-  ▼
-Display Dashboard
-  │
-  ▼
-End
+  <img src="image.png" alt="Production  Diagram" width="900">
+
+
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/97713a77-3955-4841-ba7a-25f4c75ca34d" />
